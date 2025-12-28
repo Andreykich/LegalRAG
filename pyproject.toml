@@ -1,23 +1,9 @@
-[build-system]
-requires = ["setuptools>=65", "wheel"]
-build-backend = "setuptools.build_meta"
-
 [project]
 name = "legalrag"
 version = "0.1.0"
 description = "RAG-based legal document assistant"
-readme = "README.md"
-license = {text = "MIT"}
-authors = [
-    {name = "Your Name", email = "your.email@example.com"}
-]
+authors = [{name = "Your Name", email = "your.email@example.com"}]
 requires-python = ">=3.11"
-classifiers = [
-    "Development Status :: 3 - Alpha",
-    "Intended Audience :: Legal Industry",
-    "License :: OSI Approved :: MIT License",
-    "Programming Language :: Python :: 3.11",
-]
 dependencies = [
     "torch>=2.0.0",
     "transformers>=4.35.0",
@@ -37,25 +23,15 @@ dev = [
     "black>=23.11.0",
     "isort>=5.12.0",
     "flake8>=6.1.0",
-    "mypy>=1.7.0",
 ]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [tool.black]
 line-length = 100
-target-version = ["py311"]
 
 [tool.isort]
 profile = "black"
 line_length = 100
-multi_line_mode = 3
-
-[tool.pytest.ini_options]
-minversion = "7.0"
-addopts = "-ra -q"
-testpaths = ["tests"]
-
-[tool.mypy]
-python_version = "3.11"
-warn_return_any = true
-warn_unused_configs = true
-ignore_missing_imports = true
