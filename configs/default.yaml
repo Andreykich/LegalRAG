@@ -1,0 +1,44 @@
+model:
+  embedding_model_name: "sentence-transformers/all-MiniLM-L6-v2"
+  embedding_dim: 384
+  llm_model_name: "mistralai/Mistral-7B-Instruct-v0.2"
+  llm_max_tokens: 512
+  llm_temperature: 0.3
+  llm_top_p: 0.9
+  device: "cpu"
+  quantization: false
+
+rag:
+  chunk_size: 512
+  chunk_overlap: 100
+  top_k: 3
+  similarity_threshold: 0.5
+  index_type: "faiss"
+  metric_type: "l2"
+  max_source_tokens: 2000
+  system_prompt_template: "legal"
+  enable_safety_checks: true
+  check_hallucination: true
+
+data:
+  raw_data_path: "data/raw/sample_legal_docs.json"
+  processed_data_path: "data/processed/chunks.jsonl"
+  index_path: "data/indices/faiss_index.bin"
+  metadata_path: "data/indices/metadata.json"
+  test_split: 0.1
+  val_split: 0.1
+  random_seed: 42
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+  reload: true
+  workers: 1
+  timeout: 30.0
+
+evaluation:
+  num_eval_samples: 20
+  metrics:
+    - "retrieval_recall@3"
+    - "retrieval_precision@3"
+    - "generation_quality"
