@@ -1,72 +1,8 @@
-# Python
 __pycache__/
 *.py[cod]
-*$py.class
-*.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
-
-# Virtual environments
+.venv/
 venv/
-ENV/
-env/
-.venv
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-*~
-.DS_Store
-*.sublime-workspace
-
-# Large files
-*.bin
-*.model
-*.pt
-*.pth
-*.ckpt
-*.pkl
-models/
-
-# Data files (keep structure)
-data/raw/*.json
-data/processed/*.jsonl
-data/indices/*.bin
-
-# Jupyter
-.ipynb_checkpoints/
-*.ipynb_checkpoints
-.jupyter
-
-# Testing
-.pytest_cache/
-.coverage
-htmlcov/
-.tox/
-
-# Logs
+data/
 *.log
-logs/
-wandb/
-
-# OS
-Thumbs.db
-.AppleDouble
-.LSOverride
+.DS_Store
